@@ -4,7 +4,7 @@ var Gaffa = require('gaffa'),
 
 function setValue(event){
     var input = event.target,
-        view = input.view;
+        view = input.viewModel;
 
     view.value.set(input.value);
 }
