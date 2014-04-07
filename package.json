@@ -18,5 +18,10 @@
   "peerDependencies": {
     "gaffa": "^1.4.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "formelement abstract view for gaffa",
+  "homepage": "https://github.com/KoryNunn/gaffa-formelement",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
