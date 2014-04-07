@@ -1,0 +1,22 @@
+{
+  "name": "gaffa-formelement",
+  "author": "Kory Nunn <knunn187@gmail.com>",
+  "version": "1.0.0",
+  "main": "formelement.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KoryNunn/gaffa-formelement.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KoryNunn/gaffa-formelement/issues"
+  },
+  "keywords": [
+    "gaffa",
+    "formelement",
+    "abstract view"
+  ],
+  "peerDependencies": {
+    "gaffa": "^1.4.3"
+  },
+  "license": "MIT"
+}
