@@ -1,7 +1,7 @@
 {
   "name": "gaffa-formelement",
   "author": "Kory Nunn <knunn187@gmail.com>",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "formelement.js",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "abstract view"
   ],
   "peerDependencies": {
-    "gaffa": "^1.4.3"
+    "gaffa": "^1.8.0"
   },
   "license": "MIT",
   "description": "formelement abstract view for gaffa",
