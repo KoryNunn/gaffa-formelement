@@ -1,7 +1,7 @@
 {
   "name": "gaffa-formelement",
   "author": "Kory Nunn <knunn187@gmail.com>",
-  "version": "1.0.3",
+  "version": "1.1.1",
   "main": "formelement.js",
   "repository": {
     "type": "git",
