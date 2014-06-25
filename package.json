@@ -16,7 +16,7 @@
     "abstract view"
   ],
   "peerDependencies": {
-    "gaffa": "^1.4.3"
+    "gaffa": "^1.8.0"
   },
   "license": "MIT",
   "description": "formelement abstract view for gaffa",
