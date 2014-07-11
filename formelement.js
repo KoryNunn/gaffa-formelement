@@ -18,7 +18,9 @@ FormElement.prototype.render = function(){
         formElement = this.formElement = this.formElement || renderedElement,
         updateEventNames = (this.updateEventName || "change").split(' ');
 
-    this._removeHandlers.push(this.gaffa.events.on(this.updateEventName || "change", formElement, setValue));
+    this._watch(formElement);
+
+    this.gaffa.events.on(this.updateEventName || "change", formElement, setValue);
 };
 
 FormElement.prototype.value = new Gaffa.Property(function(view, value){
