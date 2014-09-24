@@ -9,8 +9,7 @@ FormElement.prototype._type = 'formElement';
 FormElement.prototype.render = function(){
     var view = this,
         renderedElement = this.renderedElement = this.renderedElement || crel('input'),
-        formElement = this.formElement = this.formElement || renderedElement,
-        updateEventNames = (this.updateEventName || "change").split(' ');
+        formElement = this.formElement = this.formElement || renderedElement;
 
     doc.on(this.updateEventName || "change", formElement, function(){
         view.value.set(formElement.value);
