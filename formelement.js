@@ -27,6 +27,7 @@ FormElement.prototype.value = new Gaffa.Property(function(view, value){
         hasCaret =
             element === document.activeElement &&
             element.type !== 'number' &&
+            element.type !== 'email' &&
             element.type !== 'date';
 
     // Skip if the text hasnt changed
