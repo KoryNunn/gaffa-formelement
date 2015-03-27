@@ -22,7 +22,12 @@ FormElement.prototype.value = new Gaffa.Property(function(view, value){
 
     var element = view.formElement,
         caretPosition = 0,
-        hasCaret = element === document.activeElement; //this is only necissary because IE10 is a pile of crap (i know what a surprise)
+
+        // This is only necessary because IE10 and Chrome is a pile of crap (i know what a surprise)
+        hasCaret =
+            element === document.activeElement &&
+            element.type !== 'number' &&
+            element.type !== 'date';
 
     // Skip if the text hasnt changed
     if(value === element.value){
