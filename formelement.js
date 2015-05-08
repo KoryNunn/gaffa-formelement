@@ -1,6 +1,7 @@
 var Gaffa = require('gaffa'),
     crel = require('crel'),
-    doc = require('doc-js');
+    doc = require('doc-js'),
+    setInputValue = require('set-input-value');
 
 function FormElement(){}
 FormElement = Gaffa.createSpec(FormElement, Gaffa.View);
@@ -20,51 +21,12 @@ FormElement.prototype.render = function(){
 FormElement.prototype.value = new Gaffa.Property(function(view, value){
     value = value || '';
 
-    var element = view.formElement,
-        caretPosition = 0,
+    var element = view.FormElement;
 
-        // This is only necessary because IE10 and Chrome is a pile of crap (i know what a surprise)
-        hasCaret =
-            element === document.activeElement &&
-            element.type !== 'number' &&
-            element.type !== 'email' &&
-            element.type !== 'time' &&
-            element.type !== 'color' &&
-            element.type !== 'month' &&
-            element.type !== 'range' &&
-            element.type !== 'date';
-
-    // Skip if the text hasnt changed
-    if(value === element.value){
-        return;
-    }
-
-    // Inspiration taken from http://stackoverflow.com/questions/2897155/get-caret-position-within-an-text-input-field
-    // but WOW is that some horrendous code!
-    if(hasCaret){
-        if (window.document.selection) {
-            var selection = window.document.selection.createRange();
-            selection.moveStart('character', -element.value.length);
-            caretPosition = selection.text.length;
-        }
-        else if (element.selectionStart || element.selectionStart == '0'){
-            caretPosition = element.selectionStart;
-        }
-    }
-
-    element.value = value;
-
-    if(hasCaret){
-        if(element.createTextRange) {
-            var range = element.createTextRange();
-
-            range.move('character', caretPosition);
-
-            range.select();
-        }
-        if(element.selectionStart) {
-            element.setSelectionRange(caretPosition, caretPosition);
-        }
+    if(~['number', 'email', 'time', 'color', 'month', 'range', 'date'].indexOf(element.type)){
+        element.value = value;
+    } else {
+        setInputValue(element, value);
     }
 
     view.valid.set(element.validity.valid);
