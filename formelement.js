@@ -28,6 +28,10 @@ FormElement.prototype.value = new Gaffa.Property(function(view, value){
             element === document.activeElement &&
             element.type !== 'number' &&
             element.type !== 'email' &&
+            element.type !== 'time' &&
+            element.type !== 'color' &&
+            element.type !== 'month' &&
+            element.type !== 'range' &&
             element.type !== 'date';
 
     // Skip if the text hasnt changed
