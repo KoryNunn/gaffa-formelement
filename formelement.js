@@ -1,7 +1,7 @@
 var Gaffa = require('gaffa'),
     crel = require('crel'),
     doc = require('doc-js'),
-    setInputValue = require('set-input-value');
+    setify = require('setify');
 
 function FormElement(){}
 FormElement = Gaffa.createSpec(FormElement, Gaffa.View);
@@ -21,13 +21,7 @@ FormElement.prototype.render = function(){
 FormElement.prototype.value = new Gaffa.Property(function(view, value){
     value = value || '';
 
-    var element = view.formElement;
-
-    if(~['number', 'email', 'time', 'color', 'month', 'range', 'date'].indexOf(element.type)){
-        element.value = value;
-    } else {
-        setInputValue(element, value);
-    }
+    setify(view.formElement, value);
 
     view.valid.set(element.validity.valid);
 });
