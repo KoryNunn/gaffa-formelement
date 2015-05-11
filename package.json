@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "crel": "^2.1.2",
-    "doc-js": "^1.0.0"
+    "doc-js": "^1.0.0",
+    "setify": "^1.0.1"
   }
 }
