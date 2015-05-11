@@ -21,7 +21,7 @@ FormElement.prototype.render = function(){
 FormElement.prototype.value = new Gaffa.Property(function(view, value){
     value = value || '';
 
-    var element = view.FormElement;
+    var element = view.formElement;
 
     if(~['number', 'email', 'time', 'color', 'month', 'range', 'date'].indexOf(element.type)){
         element.value = value;
