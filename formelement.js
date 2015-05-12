@@ -21,7 +21,9 @@ FormElement.prototype.render = function(){
 FormElement.prototype.value = new Gaffa.Property(function(view, value){
     value = value || '';
 
-    setify(view.formElement, value);
+    var element = view.formElement;
+
+    setify(element, value);
 
     view.valid.set(element.validity.valid);
 });
